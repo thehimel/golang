@@ -27,7 +27,7 @@
 ```bash
 mkdir src
 cd src
-go mod init src/hello
+go mod init src/hello  # Create the module
 touch hello.go  # Create the file
 go mod tidy  # Add the new required modules and sums
 go run .  # Run the file where main() is defined.

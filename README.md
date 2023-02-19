@@ -28,18 +28,22 @@
 mkdir src
 cd src
 go mod init src/hello
+touch hello.go  # Create the file
+go mod tidy  # Add the new required modules and sums
+go run .  # Run the file where main() is defined.
+go run hello.go  # Run the file with file name. Useful when multiple declarations of main() present in the same module.
+```
 
-# Create the file and add code to it.
-touch hello.go
+### Import External Packages
 
-# Add the new required modules and sums
-go mod tidy 
+* Let us import [quote](https://pkg.go.dev/search?q=quote) package.
+* Go to [https://pkg.go.dev](https://pkg.go.dev) and search for `quote`.
+* [quote.go](src/quote.go)
 
-# Run the file in a generic way
-go run .
-
-# Run the file with file name
-go run hello.go
+```bash
+touch quote.go
+go mod tidy  # Add the new required modules and sums
+go run quote.go
 ```
 
 ### Clea up Go Cache and Re-download
